@@ -1,3 +1,3 @@
-Hi, Wlecome to my Website.
+Hi, Welcome to my Website.
 
-To know more about me please visit: www.yadavutkarsh.com
+To learn more about me please visit: www.yadavutkarsh.com
