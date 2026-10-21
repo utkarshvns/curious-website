@@ -1,65 +1,73 @@
 /*
-	Intensify by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+	Dependency-free page behaviour:
+	1. slide-in menu (open / close via button, Escape, backdrop, links)
+	2. .is-scrolled header state
+	3. nav link highlighting for the section in view
+	Smooth scrolling is handled in CSS (html { scroll-behavior: smooth }).
 */
+(function () {
+	'use strict';
 
-(function($) {
+	var header = document.getElementById('header');
+	var menu = document.getElementById('menu');
+	var backdrop = document.querySelector('.menu-backdrop');
+	var toggle = document.querySelector('.menu-toggle');
+	var closeBtn = document.querySelector('.menu-close');
 
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)'
+	function menuIsOpen() {
+		return menu.classList.contains('is-open');
+	}
+
+	function setMenu(open) {
+		menu.classList.toggle('is-open', open);
+		backdrop.classList.toggle('is-open', open);
+		toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+		if (open) {
+			var firstLink = menu.querySelector('a');
+			if (firstLink) { firstLink.focus(); }
+		} else if (menu.contains(document.activeElement)) {
+			toggle.focus();
+		}
+	}
+
+	toggle.addEventListener('click', function () {
+		setMenu(!menuIsOpen());
+	});
+	closeBtn.addEventListener('click', function () { setMenu(false); });
+	backdrop.addEventListener('click', function () { setMenu(false); });
+	menu.addEventListener('click', function (event) {
+		if (event.target.closest('a')) { setMenu(false); }
+	});
+	document.addEventListener('keydown', function (event) {
+		if (event.key === 'Escape' && menuIsOpen()) { setMenu(false); }
 	});
 
-	$(function() {
+	function syncHeader() {
+		header.classList.toggle('is-scrolled', window.scrollY > 8);
+	}
+	window.addEventListener('scroll', syncHeader, { passive: true });
+	syncHeader();
 
-		var	$window = $(window),
-			$body = $('body'),
-			$header = $('#header');
+	var navLinks = Array.prototype.slice.call(
+		document.querySelectorAll('#header .nav a[href^="#"]')
+	);
 
-		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
-
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
-
-		// Fix: Placeholder polyfill.
-			$('form').placeholder();
-
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
-				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
-				);
-			});
-
-		// Scrolly.
-			$('.scrolly').scrolly({
-				offset: function() {
-					return $header.height();
-				}
-			});
-
-		// Menu.
-			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right'
+	if ('IntersectionObserver' in window) {
+		var observer = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				if (!entry.isIntersecting) { return; }
+				navLinks.forEach(function (link) {
+					link.classList.toggle(
+						'is-active',
+						link.getAttribute('href') === '#' + entry.target.id
+					);
 				});
+			});
+		}, { rootMargin: '-40% 0px -50% 0px' });
 
-	});
-
-})(jQuery);
+		navLinks.forEach(function (link) {
+			var target = document.getElementById(link.getAttribute('href').slice(1));
+			if (target) { observer.observe(target); }
+		});
+	}
+})();

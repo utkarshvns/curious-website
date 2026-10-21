@@ -19,6 +19,9 @@ run, so **upgrading a library means updating this file in the same change**.
 | `assets/css/font-awesome.min.css` | Font Awesome    | 4.6.3     | <https://fontawesome.com/v4.6.3/>       |
 | `assets/fonts/*`                  | Font Awesome webfonts | 4.6.3 | <https://fontawesome.com/v4.6.3/>       |
 
+jQuery, jQuery Scrolly and skel remain vendored for checksum continuity and
+are no longer loaded by the page.
+
 ## Checksums
 
 ```
@@ -35,7 +38,7 @@ and are deliberately **not** checksummed.
 
 - `assets/css/main.css` — TEMPLATED "Intensify" stylesheet
 - `assets/js/util.js` — TEMPLATED jQuery plugins (`navList`, `panel`, `placeholder`)
-- `assets/js/main.js` — TEMPLATED page bootstrap
+- `assets/js/main.js` — page bootstrap (vanilla JS: menu, header state, section highlight)
 
 ## Template licence
 

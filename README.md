@@ -18,8 +18,8 @@ manager** — the files in this repository are exactly what gets published.
 | Part      | Detail                                                                              |
 | --------- | ----------------------------------------------------------------------------------- |
 | Markup    | Hand-written HTML5 (`index.html`)                                                   |
-| Styling   | TEMPLATED "Intensify" `main.css`, Font Awesome 4.6.3, Montserrat / Open Sans / Pacifico webfonts |
-| Behaviour | jQuery 3.7.1, jQuery Scrolly, skel 3.0.1 (`assets/js`)                            |
+| Styling   | Light-minimal `main.css` (CSS custom properties), Font Awesome 4.6.3, Inter / JetBrains Mono webfonts |
+| Behaviour | Dependency-free vanilla `assets/js/main.js` (menu, header state, section highlight) |
 | Hosting   | GitHub Pages, published from the `main` branch, repository root                    |
 | Domain    | `yadavutkarsh.com`, configured through the `CNAME` file                            |
 
@@ -39,8 +39,8 @@ manager** — the files in this repository are exactly what gets published.
 │   ├── css/main.css
 │   ├── css/font-awesome.min.css
 │   ├── fonts/              # Font Awesome webfonts
-│   └── js/                 # jquery, scrolly, skel, util, main
-└── images/                 # profile photo, card images, favicon
+│   └── js/                 # main.js (loaded); jquery, scrolly, skel, util (vendored, not loaded)
+└── images/                 # profile photo, favicon
 ```
 
 ## Running it locally

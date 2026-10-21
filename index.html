@@ -41,7 +41,7 @@
 		no longer block rendering behind a CSS @import. -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico&amp;display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
 	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 
@@ -97,22 +97,33 @@
 
 	<!-- Header -->
 	<header id="header">
-		<nav class="left" aria-label="Menu"><a href="#menu"><span>Menu</span></a>
-		</nav><a href="index.html" class="logo">Utkarsh Yadav</a>
+		<a href="index.html" class="logo">Utkarsh Yadav</a>
+		<nav class="nav" aria-label="Primary">
+			<a href="#one">About</a>
+			<a href="#two">Summary</a>
+			<a href="#three">Skills</a>
+			<a href="#footer">Contact</a>
+		</nav>
+		<button type="button" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Open menu">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</button>
 	</header><!-- Menu -->
+	<div class="menu-backdrop" aria-hidden="true"></div>
 	<nav id="menu" aria-label="Main">
+		<button type="button" class="menu-close" aria-label="Close menu">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</button>
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
-			<li><a href="#one" class="scrolly">About</a></li>
-			<li><a href="#two" class="scrolly">Summary</a></li>
-			<li><a href="#three" class="scrolly">Skills</a></li>
-			<li><a href="#footer" class="scrolly">Contact</a></li>
-		</ul>
-		<ul class="actions vertical">
+			<li><a href="#one">About</a></li>
+			<li><a href="#two">Summary</a></li>
+			<li><a href="#three">Skills</a></li>
+			<li><a href="#footer">Contact</a></li>
 		</ul>
 	</nav><!-- Banner -->
 	<section id="banner">
 		<div class="content">
+			<p class="eyebrow">DATA SCIENTIST</p>
 			<h1>Hi, I am Utkarsh</h1>
 			<p>I am a Data Scientist and I love designing and developing data solutions
 			which solve business problems and create actionable insights.
@@ -120,28 +131,26 @@
 			robust pipelines and warehouses, and turning
 			raw data into dashboards and decisions that stakeholders can act on.</p>
 			<ul class="actions">
-				<li><a href="#footer" class="button scrolly">Get in touch</a></li>
-				<li><a href="#three" class="button alt scrolly">View skills</a></li>
+				<li><a href="#footer" class="button">Get in touch</a></li>
+				<li><a href="#three" class="button alt">View skills</a></li>
 			</ul>
 		</div>
 	</section>
 	<!-- One -->
-	<section id="one" class="wrapper">
-		<div class="inner flex flex-3">
-			<div class="flex-item left">
-				<div>
-					<h3>Education</h3>
+	<section id="one" class="section">
+		<div class="container about">
+			<div class="about-media">
+				<img src="images/mypic.jpg" alt="Portrait of Utkarsh Yadav" width="330" height="330">
+			</div>
+			<div class="about-body">
+				<div class="about-block">
+					<h3 class="eyebrow">Education</h3>
 					<p><b>IIM Calcutta, ISI Kolkata, IIT Kharagpur</b><br> Post Graduate Diploma in Business Analytics</p>
 					<p><b>IIT Kanpur</b><br> Bachelor of Technology in Civil Engineering<br> Minor in Industrial and Management
 						Engineering </p>
 				</div>
-			</div>
-			<div class="flex-item image fit round">
-				<img src="images/mypic.jpg" alt="Portrait of Utkarsh Yadav" width="330" height="330">
-			</div>
-			<div class="flex-item right">
-				<div>
-					<h3>Work Experience</h3>
+				<div class="about-block">
+					<h3 class="eyebrow">Work Experience</h3>
 					<p><b>PwC</b><br> Data Scientist</p>
 					<p><b>Citi</b><br> Apps Dev Programmer Analyst</p>
 				</div>
@@ -149,10 +158,10 @@
 		</div>
 	</section>
 	<!-- Two -->
-	<section id="two" class="wrapper style1 special">
-		<div class="inner">
-			<h2>Summary</h2>
-			<figure>
+	<section id="two" class="section section-surface">
+		<div class="container">
+			<h2 class="eyebrow">Summary</h2>
+			<figure class="quote-card">
 				<blockquote>
 					"Data Scientist with 9+ years of experience delivering impactful data solutions across consulting
 					and financial services. Skilled in predictive modeling, ETL workflows, and dashboard development,
@@ -163,64 +172,51 @@
 		</div>
 	</section>
 	<!-- Three -->
-	<section id="three" class="wrapper">
-		<div class="inner flex flex-3">
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic02.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Skills</h3>
-					<ul><li>Programming: Python, PySpark, R, SQL, Elasticsearch, Git </li>
-						<li>Data Visualization: Power BI, Tableau, Matplotlib, Seaborn </li>
-						<li>Techniques: Regression, Classification, Clustering, Deep Learning </li>
-						<li>Platform &amp; Tools: Windows, Unix, Azure, Databricks </li>
-					</ul>
-				</div>
-			</div>
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic03.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Certifications</h3>
-					<ul><li>Cloud: Azure Data Scientist, Azure Data Engineer, Azure Power BI Data Analyst </li>
-						<li>Consulting &amp; Design: PwC Digital Acumen Badge, PwC Human Centered Design Badge </li>
-						<li>Dale Carnegie Certificates - Working in Teams, Public Speaking &amp; Conflict Management </li>
-						<li>upGrad Data Science Program </li>
-					</ul>
-				</div>
-			</div>
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic04.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Leadership &amp; Awards </h3>
-					<ul><li>PwC: Award from Managing Director of Products &amp; Technology for leading All Things Data community initiatives. </li>
-						<li>IIT Kanpur: Leadership Certificate from Dean of Resources &amp; Alumni for leading a team of 100+ students &amp; raising funds. </li>
-						<li>IIM Calcutta: Content Strategist for Institute Analytics Magazine, designed &amp; published content for the AINA2021 edition. </li>
-					</ul>
-				</div>
-			</div>
+	<section id="three" class="section">
+		<div class="container cards">
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+				<h3>Skills</h3>
+				<ul class="chips">
+					<li><span class="chip-label">Programming</span> <span class="chip">Python</span> <span class="chip">PySpark</span> <span class="chip">R</span> <span class="chip">SQL</span> <span class="chip">Elasticsearch</span> <span class="chip">Git</span> </li>
+					<li><span class="chip-label">Data Visualization</span> <span class="chip">Power BI</span> <span class="chip">Tableau</span> <span class="chip">Matplotlib</span> <span class="chip">Seaborn</span> </li>
+					<li><span class="chip-label">Techniques</span> <span class="chip">Regression</span> <span class="chip">Classification</span> <span class="chip">Clustering</span> <span class="chip">Deep Learning</span> </li>
+					<li><span class="chip-label">Platform &amp; Tools</span> <span class="chip">Windows</span> <span class="chip">Unix</span> <span class="chip">Azure</span> <span class="chip">Databricks</span> </li>
+				</ul>
+			</article>
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+				<h3>Certifications</h3>
+				<ul class="list">
+					<li>Cloud: Azure Data Scientist, Azure Data Engineer, Azure Power BI Data Analyst </li>
+					<li>Consulting &amp; Design: PwC Digital Acumen Badge, PwC Human Centered Design Badge </li>
+					<li>Dale Carnegie Certificates - Working in Teams, Public Speaking &amp; Conflict Management </li>
+					<li>upGrad Data Science Program </li>
+				</ul>
+			</article>
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+				<h3>Leadership &amp; Awards </h3>
+				<ul class="list">
+					<li>PwC: Award from Managing Director of Products &amp; Technology for leading All Things Data community initiatives. </li>
+					<li>IIT Kanpur: Leadership Certificate from Dean of Resources &amp; Alumni for leading a team of 100+ students &amp; raising funds. </li>
+					<li>IIM Calcutta: Content Strategist for Institute Analytics Magazine, designed &amp; published content for the AINA2021 edition. </li>
+				</ul>
+			</article>
 		</div>
 	</section>
 	<!-- Footer -->
 	<footer id="footer">
-		<div class="inner">
+		<div class="container">
 			<h2>Get In Touch</h2>
-			<ul class="actions">
-				<li><a href="https://www.linkedin.com/in/utkarsh-yadav-96255384/" class="icon fa-linkedin fa-4x"><span class="label">Linkedin</span></a></li>
-				<li><a href="https://github.com/utkarshvns" class="icon fa-github fa-4x"><span class="label">Github</span></a></li>
+			<ul class="actions social">
+				<li><a href="https://www.linkedin.com/in/utkarsh-yadav-96255384/" class="icon-btn fa fa-linkedin"><span class="label">Linkedin</span></a></li>
+				<li><a href="https://github.com/utkarshvns" class="icon-btn fa fa-github"><span class="label">Github</span></a></li>
 			</ul>
 		</div>
 	</footer>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 
