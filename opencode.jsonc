@@ -1,0 +1,84 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "instructions": ["AGENTS.md"],
+
+  // Review is the default posture for a public repository. Switch to the
+  // `dev` agent for implementation work (see README, "Working with agents").
+  "default_agent": "review",
+
+  // Rules are evaluated in order and the LAST match wins, so the broad
+  // baseline comes first and the narrow rules refine it afterwards.
+  "permissions": [
+    { "action": "shell", "resource": "*", "effect": "ask" },
+
+    // --- Read-only Git inspection: safe, auto-allowed ---
+    { "action": "shell", "resource": "git status *", "effect": "allow" },
+    { "action": "shell", "resource": "git diff *", "effect": "allow" },
+    { "action": "shell", "resource": "git log *", "effect": "allow" },
+    { "action": "shell", "resource": "git show *", "effect": "allow" },
+    { "action": "shell", "resource": "git ls-files *", "effect": "allow" },
+    { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+    { "action": "shell", "resource": "git remote -v", "effect": "allow" },
+    { "action": "shell", "resource": "git branch *", "effect": "allow" },
+
+    // --- Git history, remote and package installs: approval required ---
+    { "action": "shell", "resource": "git commit *", "effect": "ask" },
+    { "action": "shell", "resource": "git push *", "effect": "ask" },
+    { "action": "shell", "resource": "git merge *", "effect": "ask" },
+    { "action": "shell", "resource": "git rebase *", "effect": "ask" },
+    { "action": "shell", "resource": "git checkout *", "effect": "ask" },
+    { "action": "shell", "resource": "git switch *", "effect": "ask" },
+    { "action": "shell", "resource": "git stash *", "effect": "ask" },
+    { "action": "shell", "resource": "git branch -d *", "effect": "ask" },
+    { "action": "shell", "resource": "git branch -D *", "effect": "ask" },
+    { "action": "shell", "resource": "gh pr create *", "effect": "ask" },
+    { "action": "shell", "resource": "gh pr merge *", "effect": "ask" },
+    { "action": "shell", "resource": "gh release *", "effect": "ask" },
+    { "action": "shell", "resource": "npm install *", "effect": "ask" },
+    { "action": "shell", "resource": "npm ci *", "effect": "ask" },
+    { "action": "shell", "resource": "npx *", "effect": "ask" },
+
+    // --- Hard blocks: saved "always allow" approvals cannot override these ---
+    { "action": "shell", "resource": "git push --force*", "effect": "deny" },
+    { "action": "shell", "resource": "git push -f*", "effect": "deny" },
+    { "action": "shell", "resource": "git reset --hard*", "effect": "deny" },
+    { "action": "shell", "resource": "git clean -*", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf *", "effect": "deny" },
+    { "action": "shell", "resource": "rm -rf .*", "effect": "deny" },
+    { "action": "shell", "resource": "sudo *", "effect": "deny" },
+
+    // --- Filesystem scope: stay inside the repository ---
+    { "action": "read", "resource": "*", "effect": "allow" },
+    { "action": "edit", "resource": "*", "effect": "allow" },
+    { "action": "external_directory", "resource": "*", "effect": "ask" }
+  ],
+
+  "agents": {
+    "review": {
+      "description": "Review-only mode. Inspects the repository and reports findings without editing files, committing, or deploying.",
+      "mode": "all",
+      "system": "You are in REVIEW mode. Inspect and report only. Never edit, create, or delete any file. Never run git commit, push, merge, rebase, reset, checkout, switch, stash, or clean. Never install packages. Present findings with file paths and line numbers, ordered by severity, and state clearly what you verified versus what you assumed.",
+      "permissions": [
+        { "action": "edit", "resource": "*", "effect": "deny" },
+        { "action": "shell", "resource": "git commit *", "effect": "deny" },
+        { "action": "shell", "resource": "git push *", "effect": "deny" },
+        { "action": "shell", "resource": "git merge *", "effect": "deny" },
+        { "action": "shell", "resource": "git rebase *", "effect": "deny" },
+        { "action": "shell", "resource": "git reset *", "effect": "deny" },
+        { "action": "shell", "resource": "git checkout *", "effect": "deny" },
+        { "action": "shell", "resource": "git switch *", "effect": "deny" },
+        { "action": "shell", "resource": "git stash *", "effect": "deny" },
+        { "action": "shell", "resource": "git clean *", "effect": "deny" },
+        { "action": "shell", "resource": "npm install *", "effect": "deny" },
+        { "action": "shell", "resource": "npm ci *", "effect": "deny" }
+      ]
+    },
+
+    "dev": {
+      "description": "Development mode. Implements one scoped website change, verifies it locally, and prepares it for review.",
+      "mode": "all",
+      "system": "You are in DEVELOPMENT mode. Implement exactly one clearly scoped change to the static website. Do not modify the deployment configuration (GitHub Pages source, CNAME, repository settings). Do not commit, push, merge, or deploy. After editing, verify by serving the site locally and checking for broken local asset references and leftover template placeholder text. Summarize the diff and state what you verified."
+    }
+  }
+}

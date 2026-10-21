@@ -4,20 +4,92 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html>
+<html lang="en">
 
 <head>
-	<title>Always Curious</title>
+	<title>Utkarsh Yadav | Data Scientist</title>
 	<meta charset="utf-8">
+	<meta name="description" content="My work spans data science, data engineering and data analytics - designing robust pipelines and warehouses, and turning raw data into dashboards and decisions that stakeholders can act on.">
 	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="canonical" href="https://yadavutkarsh.com/">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="profile">
+	<meta property="og:site_name" content="Always Curious">
+	<meta property="og:title" content="Utkarsh Yadav | Data Scientist">
+	<meta property="og:description" content="Data Scientist working across data science, data engineering and data analytics - designing robust pipelines and warehouses, and turning raw data into dashboards and decisions that stakeholders can act on.">
+	<meta property="og:url" content="https://yadavutkarsh.com/">
+	<meta property="og:image" content="https://yadavutkarsh.com/images/mypic.jpg">
+	<meta property="og:image:width" content="800">
+	<meta property="og:image:height" content="800">
+	<meta property="og:image:alt" content="Portrait of Utkarsh Yadav">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Utkarsh Yadav | Data Scientist">
+	<meta name="twitter:description" content="Data Scientist working across data science, data engineering and data analytics - designing robust pipelines and warehouses, and turning raw data into dashboards and decisions that stakeholders can act on.">
+	<meta name="twitter:image" content="https://yadavutkarsh.com/images/mypic.jpg">
+	<meta name="twitter:image:alt" content="Portrait of Utkarsh Yadav">
+
+	<!-- Favicon: served from this repository, so it can never drift from the site -->
+	<link rel="icon" href="images/data-science.png" type="image/png">
+	<link rel="apple-touch-icon" href="images/data-science.png">
+	<!-- <a href="https://www.freepik.com/icons/data-science">Icon by vectorsmarket15</a> -->
+
+	<!-- Stylesheets. The webfonts are preconnected and loaded with <link> so they
+		no longer block rendering behind a CSS @import. -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 
-	<!-- add icon link -->
-	<link rel="icon" href="https://raw.githubusercontent.com/utkarshvns/curious-website/refs/heads/main/images/data-science.png"
-		type="image/x-icon" />
-
-		<!-- <a href="https://www.freepik.com/icons/data-science">Icon by vectorsmarket15</a> -->
+	<!-- Structured data. Every value below is already stated on this page. -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Person",
+		"name": "Utkarsh Yadav",
+		"url": "https://yadavutkarsh.com/",
+		"image": "https://yadavutkarsh.com/images/mypic.jpg",
+		"jobTitle": "Data Scientist",
+		"description": "Data Scientist working across data science, data engineering and data analytics - designing robust pipelines and warehouses, and turning raw data into dashboards and decisions that stakeholders can act on.",
+		"sameAs": [
+			"https://www.linkedin.com/in/utkarsh-yadav-96255384/",
+			"https://github.com/utkarshvns"
+		],
+		"alumniOf": [
+			{ "@type": "CollegeOrUniversity", "name": "IIM Calcutta" },
+			{ "@type": "CollegeOrUniversity", "name": "IIT Kanpur" }
+		],
+		"worksFor": [
+			{ "@type": "Organization", "name": "PwC" },
+			{ "@type": "Organization", "name": "Citi" }
+		],
+		"knowsAbout": [
+			"Data Science",
+			"Data Engineering",
+			"Data Analytics",
+			"Python",
+			"PySpark",
+			"R",
+			"SQL",
+			"Elasticsearch",
+			"Git",
+			"Power BI",
+			"Tableau",
+			"Matplotlib",
+			"Seaborn",
+			"Regression",
+			"Classification",
+			"Clustering",
+			"Deep Learning",
+			"Azure",
+			"Databricks"
+		]
+	}
+	</script>
 
 </head>
 
@@ -25,149 +97,126 @@
 
 	<!-- Header -->
 	<header id="header">
-		<nav class="left"><a href="#menu"><span>Menu</span></a>
-		</nav><a href="index.html" class="logo">Utkarsh Yadav</a>
-		<!-- <nav class="right"><a href="#" class="button alt">Log in</a> -->
+		<a href="index.html" class="logo">Utkarsh Yadav</a>
+		<nav class="nav" aria-label="Primary">
+			<a href="#one">About</a>
+			<a href="#two">Summary</a>
+			<a href="#three">Skills</a>
+			<a href="#footer">Contact</a>
 		</nav>
+		<button type="button" class="menu-toggle" aria-controls="menu" aria-expanded="false" aria-label="Open menu">
+			<i class="fa fa-bars" aria-hidden="true"></i>
+		</button>
 	</header><!-- Menu -->
-	<nav id="menu">
+	<div class="menu-backdrop" aria-hidden="true"></div>
+	<nav id="menu" aria-label="Main">
+		<button type="button" class="menu-close" aria-label="Close menu">
+			<i class="fa fa-times" aria-hidden="true"></i>
+		</button>
 		<ul class="links">
 			<li><a href="index.html">Home</a></li>
-			<!-- <li><a href="generic.html">Generic</a></li>
-			<li><a href="elements.html">Elements</a></li> -->
-		</ul>
-		<ul class="actions vertical">
-			<!-- <li><a href="#" class="button fit">Login</a></li> -->
+			<li><a href="#one">About</a></li>
+			<li><a href="#two">Summary</a></li>
+			<li><a href="#three">Skills</a></li>
+			<li><a href="#footer">Contact</a></li>
 		</ul>
 	</nav><!-- Banner -->
 	<section id="banner">
 		<div class="content">
-			<h1>Hi, I am Utkarsh </h1>
-			<p>I am a Data Scientist and I love designing and developing data solutions <br>which solve business problems and create actionable insights .<br>
-			My work spans data science, data engineering and data analytics - designing<br>
-			robust pipelines and warehouses, and turning<br>
-			raw data into dashboards and decisions that stakeholders can act on.<br></p>
-			<!-- <ul class="actions"><li><a href="#one" class="button scrolly">Get Started</a></li> -->
+			<p class="eyebrow">DATA SCIENTIST</p>
+			<h1>Hi, I am Utkarsh</h1>
+			<p>I am a Data Scientist and I love designing and developing data solutions
+			which solve business problems and create actionable insights.
+			My work spans data science, data engineering and data analytics - designing
+			robust pipelines and warehouses, and turning
+			raw data into dashboards and decisions that stakeholders can act on.</p>
+			<ul class="actions">
+				<li><a href="#footer" class="button">Get in touch</a></li>
+				<li><a href="#three" class="button alt">View skills</a></li>
 			</ul>
 		</div>
 	</section>
 	<!-- One -->
-	<section id="one" class="wrapper">
-		<div class="inner flex flex-3">
-			<div class="flex-item left">
-				<div>
-					<h3>Education</h3>
+	<section id="one" class="section">
+		<div class="container about">
+			<div class="about-media">
+				<img src="images/mypic.jpg" alt="Portrait of Utkarsh Yadav" width="330" height="330">
+			</div>
+			<div class="about-body">
+				<div class="about-block">
+					<h3 class="eyebrow">Education</h3>
 					<p><b>IIM Calcutta, ISI Kolkata, IIT Kharagpur</b><br> Post Graduate Diploma in Business Analytics</p>
 					<p><b>IIT Kanpur</b><br> Bachelor of Technology in Civil Engineering<br> Minor in Industrial and Management
 						Engineering </p>
 				</div>
-				<!-- <div>
-							<h3>Work Experience</h3>
-							<p>PricewaterhouseCoopers<br> Data Scientist</p>
-							<p>Citicorp Services India Pvt Ltd<br>Apps Dev Programmer Analyst</p>
-						</div> -->
-			</div>
-			<div class="flex-item image fit round">
-				<img src="images/mypic.jpg" alt="" width="330" height="330">
-			</div>
-			<div class="flex-item right">
-				<div>
-					<h3>Work Experience</h3>
+				<div class="about-block">
+					<h3 class="eyebrow">Work Experience</h3>
 					<p><b>PwC</b><br> Data Scientist</p>
-					<br>
 					<p><b>Citi</b><br> Apps Dev Programmer Analyst</p>
-					<br><br>
 				</div>
-				<!-- <div>
-							<h3>Suscipit nibh dolore</h3>
-							<p>Pellentesque egestas sem. Suspendisse<br> modo ullamcorper feugiat lorem.</p>
-						</div> -->
 			</div>
 		</div>
 	</section>
 	<!-- Two -->
-	<section id="two" class="wrapper style1 special">
-		<div class="inner">
-			<h2>Summary</h2>
-			<figure>
+	<section id="two" class="section section-surface">
+		<div class="container">
+			<h2 class="eyebrow">Summary</h2>
+			<figure class="quote-card">
 				<blockquote>
 					"Data Scientist with 9+ years of experience delivering impactful data solutions across consulting
 					and financial services. Skilled in predictive modeling, ETL workflows, and dashboard development,
 					driving multiple client pipelines and operational efficiency. Proficient in Python, SQL, and Azure,
 					with a strong educational foundation from IIM Calcutta and IIT Kanpur."
 				</blockquote>
-				<!-- <footer><cite class="author">Jane Anderson</cite>
-					<cite class="company">CEO, Untitled</cite>
-				</footer> -->
 			</figure>
 		</div>
 	</section>
 	<!-- Three -->
-	<section id="three" class="wrapper">
-		<div class="inner flex flex-3">
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic02.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Skills</h3>
-					<ul><li>Programming: Python, PySpark, R, SQL, Elasticsearch, Git </li>
-						<li>Data Visualization: Power BI, Tableau, Matplotlib, Seaborn </li>
-						<li>Techniques: Regression, Classification, Clustering, Deep Learning </li>
-						<li>Platform & Tools: Windows, Unix, Azure, Databricks </li>
-					</ul>
-				</div>
-			</div>
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic03.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Certifications</h3>
-					<ul><li>Cloud: Azure Data Scientist, Azure Data Engineer, Azure Power BI Data Analyst </li>
-						<li>Consulting & Design: PwC Digital Acumen Badge, PwC Human Centered Design Badge </li>
-						<li>Dale Carnegie Certificates - Working in Teams, Public Speaking & Conflict Management </li>
-						<li>upGrad Data Science Program </li>
-					</ul>
-				</div>
-			</div>
-			<div class="flex-item box">
-				<div class="image fit">
-					<img src="images/pic04.jpg" alt="" width="418" height="200">
-				</div>
-				<div class="content">
-					<h3>Leadership & Awards </h3>
-					<ul><li>PwC: Award from Managing Director of Products & Technology for leading All Things Data community initiatives. </li>
-						<li>IIT Kanpur: Leadership Certificate from Dean of Resources & Alumni for leading a team of 100+ students & raising funds. </li>
-						<li>IIM Calcutta: Content Strategist for Institute Analytics Magazine, designed & published content for the AINA2021 edition. </li>
-					</ul>
-				</div>
-			</div>
+	<section id="three" class="section">
+		<div class="container cards">
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-code" aria-hidden="true"></i></div>
+				<h3>Skills</h3>
+				<ul class="chips">
+					<li><span class="chip-label">Programming</span> <span class="chip">Python</span> <span class="chip">PySpark</span> <span class="chip">R</span> <span class="chip">SQL</span> <span class="chip">Elasticsearch</span> <span class="chip">Git</span> </li>
+					<li><span class="chip-label">Data Visualization</span> <span class="chip">Power BI</span> <span class="chip">Tableau</span> <span class="chip">Matplotlib</span> <span class="chip">Seaborn</span> </li>
+					<li><span class="chip-label">Techniques</span> <span class="chip">Regression</span> <span class="chip">Classification</span> <span class="chip">Clustering</span> <span class="chip">Deep Learning</span> </li>
+					<li><span class="chip-label">Platform &amp; Tools</span> <span class="chip">Windows</span> <span class="chip">Unix</span> <span class="chip">Azure</span> <span class="chip">Databricks</span> </li>
+				</ul>
+			</article>
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-certificate" aria-hidden="true"></i></div>
+				<h3>Certifications</h3>
+				<ul class="list">
+					<li>Cloud: Azure Data Scientist, Azure Data Engineer, Azure Power BI Data Analyst </li>
+					<li>Consulting &amp; Design: PwC Digital Acumen Badge, PwC Human Centered Design Badge </li>
+					<li>Dale Carnegie Certificates - Working in Teams, Public Speaking &amp; Conflict Management </li>
+					<li>upGrad Data Science Program </li>
+				</ul>
+			</article>
+			<article class="card">
+				<div class="card-icon"><i class="fa fa-trophy" aria-hidden="true"></i></div>
+				<h3>Leadership &amp; Awards </h3>
+				<ul class="list">
+					<li>PwC: Award from Managing Director of Products &amp; Technology for leading All Things Data community initiatives. </li>
+					<li>IIT Kanpur: Leadership Certificate from Dean of Resources &amp; Alumni for leading a team of 100+ students &amp; raising funds. </li>
+					<li>IIM Calcutta: Content Strategist for Institute Analytics Magazine, designed &amp; published content for the AINA2021 edition. </li>
+				</ul>
+			</article>
 		</div>
 	</section>
 	<!-- Footer -->
 	<footer id="footer">
-		<div class="inner">
+		<div class="container">
 			<h2>Get In Touch</h2>
-			<ul class="actions">
-				<li><a href="https://www.linkedin.com/in/utkarsh-yadav-96255384/" class="icon fa-linkedin fa-4x"><span class="label">Linkedin</span></a></li>
-				<li><a href="https://github.com/utkarshvns" class="icon fa-github fa-4x"><span class="label">Github</span></a></li>						
-<!-- 				
-				<li><span class="icon fa-phone"></span> <a href="#">(000) 000-0000</a></li>
-				<li><span class="icon fa-envelope"></span> <a href="#">information@untitled.tld</a></li>
-				<li><span class="icon fa-map-marker"></span> 123 Somewhere Road, Nashville, TN 00000</li> -->
+			<ul class="actions social">
+				<li><a href="https://www.linkedin.com/in/utkarsh-yadav-96255384/" class="icon-btn fa fa-linkedin"><span class="label">Linkedin</span></a></li>
+				<li><a href="https://github.com/utkarshvns" class="icon-btn fa fa-github"><span class="label">Github</span></a></li>
 			</ul>
 		</div>
 	</footer>
-	<!-- <div class="copyright">
-		Powered by: <a href="https://templated.co/">TEMPLATED</a>.
-	</div> -->
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 

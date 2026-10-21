@@ -1,0 +1,31 @@
+name: CI
+
+# Validates the site on every pull request and on every push.
+# This workflow does NOT deploy. GitHub Pages continues to publish the `main`
+# branch directly, so the deployment setup is unchanged.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Static site checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check asset references, placeholders, JSON-LD and secrets
+        run: python3 .github/scripts/check_site.py
+
+      - name: Validate HTML
+        run: npx --yes html-validate@9 "*.html"
