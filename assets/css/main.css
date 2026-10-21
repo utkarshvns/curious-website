@@ -1,6 +1,10 @@
 @charset "UTF-8";
-@import url(font-awesome.min.css);
-@import "https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300,400|Pacifico";
+
+/*
+	Font Awesome and the Google webfonts are loaded from index.html with
+	<link> elements instead of a CSS @import, so they no longer block the
+	first render.
+*/
 
 /*
 	Intensify by TEMPLATED

@@ -1,0 +1,22 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS temp
+*.tmp
+*.bak
+*~
+
+# There is no build step in this repository, but keep these ignored in case
+# tooling is ever introduced locally.
+node_modules/
+dist/
+build/
+.cache/
